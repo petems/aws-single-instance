@@ -29,7 +29,7 @@ resource "aws_instance" "foobar" {
 
 
   tags {
-    # Name = "foobar"
+    Name = "foobar"
   }
 
 }
