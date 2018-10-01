@@ -26,6 +26,7 @@ data "aws_ami" "xenial_ami" {
 resource "aws_instance" "foobar" {
   ami                    = "${data.aws_ami.xenial_ami.image_id}"
   instance_type          = "t2.micro"
+  
 
 
   tags {
@@ -54,6 +55,7 @@ resource "aws_instance" "foobar" {
     recreate_client = true
     user_name       = "bork"
     version         = "12.4.1"
+    user_key        = "foo"
    }
 
 }
