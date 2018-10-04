@@ -30,32 +30,7 @@ resource "aws_instance" "foobar" {
 
 
   tags {
-    # Name = "foobar"
+    Name = "foobar"
   }
-  
-  provisioner "chef" {
-    attributes_json = <<-EOF
-      {
-        "key": "value",
-        "app": {
-          "cluster1": {
-            "nodes": [
-              "webserver1",
-              "webserver2"
-            ]
-          }
-        }
-      }
-    EOF
-
-    environment     = "_default"
-    run_list        = ["cookbook::recipe"]
-    node_name       = "webserver1"
-    server_url      = "https://chef.company.com/organizations/org1"
-    recreate_client = true
-    user_name       = "bork"
-    version         = "12.4.1"
-    user_key        = "foo"
-   }
 
 }
