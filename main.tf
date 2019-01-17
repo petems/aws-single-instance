@@ -34,3 +34,7 @@ resource "aws_instance" "foobar" {
   }
 
 }
+
+output "id" {
+  value = "${aws_instance.foobar.id}"
+}
