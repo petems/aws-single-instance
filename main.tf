@@ -31,6 +31,7 @@ resource "aws_instance" "foobar" {
 
   tags {
     Name = "foobar"
+    DemoDate = "12-June-2019"
   }
 
 }
