@@ -24,17 +24,15 @@ data "aws_ami" "xenial_ami" {
 }
 
 resource "aws_instance" "foobar" {
-  ami                    = "${data.aws_ami.xenial_ami.image_id}"
-  instance_type          = "t2.micro"
-  
+  ami           = data.aws_ami.xenial_ami.image_id
+  instance_type = "t2.micro"
 
-
-  tags {
+  tags = {
     Name = "foobar"
   }
-
 }
 
 output "instance_id" {
-  value = "${aws_instance.foobar.id}"
+  value = aws_instance.foobar.id
 }
+
